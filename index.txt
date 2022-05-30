@@ -1,0 +1,366 @@
+1.1. Desarrollar el Proyecto
+A continuación, creará su propia base de datos de red social con las siguientes colecciones:
+Users
+Posts
+Comments
+
+db.createCollection('Users')
+db.createCollection('Posts')
+
+
+1.2. Ejecute las siguientes consulta
+
+A continuación tendrás que realizar las siguientes consultas MongoDB:
+
+1.2.1 INSERTAR DATOS
+
+
+Insertar al menos 15 publicaciones nuevas con almenos 2 comentarios por publicación:
+Title
+Body
+Username
+Comments
+Username
+Body
+
+db.posts.insertMany([
+{ title: 'Publi1', body:'esta es mi primera publi', username:'paquita',comments: [
+{
+username: 'amigopueblo',
+body: 'qué bonita publiiii',
+
+},
+{
+    username: 'hermanaguay',
+body: 'me encanta esa playa',
+
+}
+]},
+{ title: 'Publi2', body:'segunda publi qué chacho', username:'juan',comments: [
+{
+username: 'amigapueblo',
+body: 'quiero ir',
+
+},
+{
+    username: 'hermanosguays',
+body: 'salimos genial',
+
+}
+]},
+{ title: 'Publi3', body:'esta es mi tercera publi', username:'maria',comments: [
+{
+username: 'paquita',
+body: 'I love it',
+
+},
+{
+    username: 'juan',
+body: 'wow',
+
+}
+]},
+{ title: 'Publi4', body:'esta es mi cuarta publi', username:'mario',comments: [
+{
+username: 'amigos',
+body: 'holiii',
+
+},
+{
+    username: 'hermanaguay',
+body: 'yeeee',
+
+}
+]},
+{ title: 'Publi5', body:'esta es mi quinta publi', username:'paco',comments: [
+{
+username: 'amigopueblo',
+body: 'adios',
+
+},
+{
+    username: 'padre',
+body: 'que guapo',
+
+}
+]},
+{ title: 'Publi6', body:'esta es mi sexta publi', username:'kevin',comments: [
+{
+username: 'juanjo',
+body: 'wdnwd',
+
+},
+{
+    username: 'hermanaguay',
+body: 'wrpogj',
+
+}
+]},
+{ title: 'Publi7', body:'esta es mi 7 publi', username:'mario',comments: [
+{
+username: 'amigopueblo',
+body: 'qué bonit',
+
+},
+{
+    username: 'maria',
+body: 'me encantaaaaa',
+
+}
+]},
+{ title: 'Publi8', body:'esta es mi 8 publi', username:'mariano',comments: [
+{
+username: 'amigopueblo',
+body: 'weicmwe',
+
+},
+{
+    username: 'paquita',
+body: 'me encanttttaaa',
+
+}
+]},
+{ title: 'Publi9', body:'esta es mi 9 publi', username:'kevin',comments: [
+{
+username: 'amigopueblo',
+body: 'wooooooooow',
+
+},
+{
+    username: 'maria',
+body: 'que feo',
+
+}
+]},
+{ title: 'Publi10', body:'esta es mi 10 publi', username:'andrea',comments: [
+{
+username: 'maria',
+body: 'qué bonit',
+
+},
+{
+    username: 'hermanaguay',
+body: 'quuiero ir',
+
+}
+]},
+{ title: 'Publi11', body:'esta es mi 11 publi', username:'manolo',comments: [
+{
+username: 'amigopueblo',
+body: 'las cerveees',
+
+},
+{
+    username: 'andrea',
+body: 'eocnqw',
+
+}
+]},
+{ title: 'Publi12', body:'esta es mi 12 publi', username:'amelia',comments: [
+{
+username: 'amigopueblo',
+body: 'wedjknwe',
+
+},
+{
+    username: 'paquita',
+body: 'quiero irrr',
+
+}
+]},
+{ title: 'Publi13', body:'esta es mi 13 publi', username:'mario',comments: [
+{
+username: 'amigopueblo',
+body: 'qué bonit',
+
+},
+{
+    username: 'maria',
+body: 'me encantaaaaa',
+
+}
+]},
+{ title: 'Publi14', body:'esta es mi 14 puuuuubli', username:'ines',comments: [
+{
+username: 'amigopueblo',
+body: 'wendmew',
+
+},
+{
+    username: 'kevin',
+body: 'yujuuuuuuuuuu',
+
+}
+]},
+{ title: 'Publi15', body:'esta es mi 15 puuuuubli', username:'amigopueblo',comments: [
+{
+username: 'ines',
+body: 'wefnfnfndmew',
+
+},
+{
+    username: 'maria',
+body: 'yujuuuuuuuuuu',
+
+}
+]}
+])
+Insertar al menos 10 nuevos usuarios:
+Username
+Email
+Age
+
+db.Users.insertMany([
+{ username: 'amigapueblo', email: 'amigapueblo@gmail.com', age: 16},
+{ username: 'kevin', email: 'kevin@gmail.com', age: 20},
+{ username: 'maria', email: 'maria@gmail.com', age: 45},
+{ username: 'hermanaguay', email: 'hermanaguay@gmail.com', age: 22},
+{ username: 'paco', email: 'paco@gmail.com', age: 50},
+{ username: 'paquita', email: 'paquita@gmail.com', age: 30},
+{ username: 'andrea', email: 'andrea@gmail.com', age: 20},
+{ username: 'amigopueblo', email: 'amigo@gmail.com', age: 30},
+{ username: 'amelia', email: 'amelia@gmail.com', age: 14},
+{ username: 'ines', email: 'ines@gmail.com', age: 38}
+])
+
+
+1.2.2 ACTUALIZAR DATOS
+ 
+Actualizar publicaciones:
+Actualiza todos los campos de una publicación
+
+db.posts.updateOne({ title: 'Publi15' },
+{ $set:{body:'esta es mi 15 modificadaaaa puuuuubli', username:'marta',comments: [
+{
+username: 'maria',
+body: 'new coment modificado',
+
+},
+{
+    username: 'andrea',
+body: 'modificadooo yujuuuuuuuuuu',
+
+}
+]
+}})
+
+Cambiar el body de una publicación.
+
+db.posts.updateOne({ title: 'Publi10' },
+{ $set:{body:'esta es mi publi modificada'}})
+
+Actualizar comentarios:
+Cambiar el body de un comentario.
+
+db.posts.updateOne({ title: 'Publi9' },
+{ $set:{comments: [
+{
+username: 'maria',
+body: 'solo quiero modificar este coment',
+
+},
+{
+username: 'amigopueblo',
+body: 'wooooooooow',
+
+}
+]
+}})
+
+Actualizar usuarios:
+Actualiza todos los campos de un usuario
+
+db.Users.updateOne({ username: 'amigapueblo' },
+{ $set:{ username: 'amigapuebloMOdificada', email: 'amigapueblonew@gmail.com', age: 23}})
+
+Cambiar el email de dos usuarios es decir hacer la query dos veces.
+
+db.Users.updateOne({ username: 'ines' },
+{ $set:{ email: 'inesnuevo@gmail.com'}})
+
+db.Users.updateOne({ username: 'kevin' },
+{ $set:{ email: 'kevin2new@gmail.com'}})
+
+Aumenta en 5 años la edad de un usuario
+
+db.Users.updateOne({ username: 'paco' },
+{
+$inc: {age: 5}
+})
+
+1.2.3 OBTENER DATOS
+
+Seleccionar todas las publicaciones
+db.posts.find()
+
+Selecciona las publicaciones que coincidan con el username indicado
+db.posts.find({username:'maria'})
+
+Seleccione todos los usuarios con una edad mayor a 20
+db.Users.find({age:{$gt:20}})
+
+Seleccione todos los usuarios con una edad inferior a 23
+db.Users.find({age:{$lt:23}})
+
+Seleccione todos los usuarios que tengan una edad entre 25 y 30 años
+db.Users.find({ $and:[
+{age:{$gte:25}},{age:{$lte:30}}
+]})
+
+Muestra los usuarios de edad menor a mayor y viceversa
+db.Users.find().sort({ age: 1 })
+db.Users.find().sort({ age: -1 })
+
+Seleccione el número total de usuarios
+db.Users.find().count()
+
+Seleccione todas las publicaciones de la siguiente manera: Título de la publicación: "título de las publicaciones"
+db.posts.createIndex({ title: 'text' })
+
+db.posts.find({
+$text: {
+$search: 'publi2'
+}
+})
+
+Selecciona solo 2 usuarios
+db.Users.find().limit(2)
+
+Busca por title 2 publicaciones
+db.posts.createIndex({ title: 'text' })
+
+db.posts.find({
+$text: {
+$search: 'publi6'
+}
+})
+
+db.posts.createIndex({ title: 'text' })
+
+db.posts.find({
+$text: {
+$search: 'publi8'
+}
+})
+
+1.2.4 BORRAR DATOS
+
+Elimina a todos los usuarios con una edad mayor a 30
+db.Users.deleteMany({age:{$gt:30}})
+
+1.3 Extra
+
+Seleccione el número total de publicaciones que tienen más de un comentario
+db.posts.find({$nor: [{comments: {$size: 0}}]})
+
+
+Seleccione la última publicación creada
+db.posts.find().sort({$natural:-1}).limit(1)
+
+Selecciona 5 publicaciones y que sean las últimas creadas
+db.posts.find().sort({$natural:-1}).limit(5)
+
+Elimina todas las publicaciones que tengan más de un comentario
+db.posts.deleteMany({$nor: [{comments: {$size: 0}}]})
+
+
