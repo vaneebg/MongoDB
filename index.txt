@@ -138,6 +138,10 @@ body: 'qué bonit',
     username: 'hermanaguay',
 body: 'quuiero ir',
 
+},{
+    username: 'hermanaguay',
+body: 'quuiero ir',
+
 }
 ]},
 { title: 'Publi11', body:'esta es mi 11 publi', username:'manolo',comments: [
@@ -348,7 +352,6 @@ Selecciona 5 publicaciones y que sean las últimas creadas
 db.posts.find().sort({$natural:-1}).limit(5)
 
 Elimina todas las publicaciones que tengan más de un comentario
-db.posts.deleteMany({$nor: [{comments: {$size: 0}}]})
 
 
 db.posts.deleteMany({$nor: [{comments: {$size: 0}},{comments: {$size: 1}}]})
