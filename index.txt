@@ -190,19 +190,15 @@ body: 'wendmew',
     username: 'kevin',
 body: 'yujuuuuuuuuuu',
 
-}
-]},
-{ title: 'Publi15', body:'esta es mi 15 puuuuubli', username:'amigopueblo',comments: [
-{
-username: 'ines',
-body: 'wefnfnfndmew',
-
 },
 {
-    username: 'maria',
+    username: 'kevin',
 body: 'yujuuuuuuuuuu',
 
 }
+]},
+{ title: 'Publi15', body:'esta es mi 15 puuuuubli', username:'amigopueblo',comments: [
+
 ]}
 ])
 Insertar al menos 10 nuevos usuarios:
